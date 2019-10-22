@@ -1,10 +1,42 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { lavender, seafoam, letterSpacing } from "../style-constants";
 
-const Button = styled.button`
-  background-color: lightblue;
+const sharedCss = css`
+  min-width: 8rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  border-color: none;
+  font-size: 1rem;
+  opacity: 0.9;
+  letter-spacing: ${letterSpacing};
+  box-shadow: 0px 4px 8px #888888;
+  &:hover {
+    opacity: 1;
+    box-shadow: 0px 2px 4px #888888;
+  }
 `;
 
-const Primary = ({ children }) => <Button>{children}</Button>;
+const Button = styled.button`
+  ${sharedCss};
+  color: white;
+  background: linear-gradient(135deg, ${lavender} 75%, ${seafoam});
+`;
 
-export default Primary;
+export const Primary = ({ children, ...props }) => (
+  <Button title={children} {...props}>
+    {children}
+  </Button>
+);
+
+const SecondaryButton = styled.button`
+  ${sharedCss};
+  color: ${lavender};
+  background: linear-gradient(135deg, white 75%, ${lavender});
+`;
+
+export const Secondary = ({ children, ...props }) => (
+  <SecondaryButton title={children} {...props}>
+    {children}
+  </SecondaryButton>
+);
