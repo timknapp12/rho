@@ -10,6 +10,6 @@ storiesOf("Buttons", () => module)
   .add("Two buttons", () => (
     <div>
       <Primary>Purhcase</Primary>
-      <Secondary style={{ marginLeft: 12 }}>Cancel</Secondary>
+      <Secondary style={{ marginLeft: 12, marginRight: 12 }}>Cancel</Secondary>
     </div>
   ));

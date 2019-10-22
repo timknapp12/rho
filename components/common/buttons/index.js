@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { lavender, seafoam, letterSpacing } from "../style-constants";
+import { lavender, letterSpacing, babyBlue } from "../style-constants";
 
 const sharedCss = css`
   min-width: 8rem;
@@ -20,7 +20,7 @@ const sharedCss = css`
 const Button = styled.button`
   ${sharedCss};
   color: white;
-  background: linear-gradient(135deg, ${lavender} 75%, ${seafoam});
+  background: linear-gradient(135deg, ${lavender} 70%, ${babyBlue} 100%);
 `;
 
 export const Primary = ({ children, ...props }) => (
@@ -32,7 +32,7 @@ export const Primary = ({ children, ...props }) => (
 const SecondaryButton = styled.button`
   ${sharedCss};
   color: ${lavender};
-  background: linear-gradient(135deg, white 75%, ${lavender});
+  background: linear-gradient(135deg, white 70%, ${babyBlue} 100%);
 `;
 
 export const Secondary = ({ children, ...props }) => (
