@@ -1,6 +1,11 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { lavender, letterSpacing, babyBlue } from "../style-constants";
+import {
+  lavender,
+  letterSpacing,
+  babyBlue,
+  lightgray
+} from "../style-constants";
 
 const sharedCss = css`
   min-width: 8rem;
@@ -11,6 +16,7 @@ const sharedCss = css`
   opacity: 0.9;
   letter-spacing: ${letterSpacing};
   box-shadow: 0px 4px 8px #888888;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   &:hover {
     opacity: 1;
     box-shadow: 0px 2px 4px #888888;
@@ -20,14 +26,18 @@ const sharedCss = css`
 const Button = styled.button`
   ${sharedCss};
   color: white;
-  background: linear-gradient(135deg, ${lavender} 70%, ${babyBlue} 100%);
+  background: ${({ disabled }) =>
+    disabled
+      ? `linear-gradient(135deg, ${lightgray} 70%, white 100%`
+      : `linear-gradient(135deg, ${lavender} 70%, ${babyBlue} 100%`});
 `;
 
-export const Primary = ({ children, ...props }) => (
-  <Button title={children} {...props}>
-    {children}
-  </Button>
-);
+export const Primary = ({ children, disabled = false, ...props }) =>
+  console.log("disabled", disabled) || (
+    <Button title={children} disabled={disabled} {...props}>
+      {children}
+    </Button>
+  );
 
 const SecondaryButton = styled.button`
   ${sharedCss};

@@ -4,4 +4,6 @@ export const seafoam = "#71eeb8";
 
 export const babyBlue = "#89cff0";
 
+export const lightgray = "#bbbbbb";
+
 export const letterSpacing = ".125rem";
