@@ -4,8 +4,9 @@ import {
   lavender,
   letterSpacing,
   babyBlue,
-  lightgray
-} from "../style-constants";
+  lightgray,
+  red
+} from "../common/style-constants";
 
 const sharedCss = css`
   min-width: 8rem;
@@ -41,12 +42,39 @@ export const Primary = ({ children, disabled = false, ...props }) =>
 
 const SecondaryButton = styled.button`
   ${sharedCss};
-  color: ${lavender};
-  background: linear-gradient(135deg, white 70%, ${babyBlue} 100%);
+  color: ${({ disabled }) => (disabled ? "white" : lavender)};
+  background: ${({ disabled }) =>
+    disabled
+      ? `linear-gradient(135deg, ${lightgray} 70%, white 100%`
+      : `linear-gradient(135deg, white 70%, ${babyBlue} 100%`});
 `;
 
 export const Secondary = ({ children, ...props }) => (
   <SecondaryButton title={children} {...props}>
     {children}
   </SecondaryButton>
+);
+
+const ThirdButton = styled.button`
+  ${sharedCss};
+  color: white;
+  background: ${({ color }) => color};
+`;
+
+export const Third = ({ children, color, ...props }) => (
+  <ThirdButton title={children} color={color} {...props}>
+    {children}
+  </ThirdButton>
+);
+
+const Danger = styled.button`
+  ${sharedCss};
+  color: white;
+  background: linear-gradient(135deg, ${red} 70%, white 100%);
+`;
+
+export const RedButton = ({ children, ...props }) => (
+  <Danger title={children} {...props}>
+    {children}
+  </Danger>
 );

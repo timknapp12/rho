@@ -6,4 +6,6 @@ export const babyBlue = "#89cff0";
 
 export const lightgray = "#bbbbbb";
 
+export const red = "#ce2029";
+
 export const letterSpacing = ".125rem";
