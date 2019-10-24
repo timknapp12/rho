@@ -6,7 +6,7 @@ import {
   letterSpacing,
   lavenderToBlue,
   whiteToBlue,
-  redToWhite,
+  red,
   grayToWhite
 } from "../common/style-constants";
 
@@ -16,7 +16,7 @@ const sharedCss = css`
   border-radius: 0.25rem;
   border-color: none;
   font-size: 1rem;
-  opacity: 0.9;
+  opacity: 0.8;
   letter-spacing: ${letterSpacing};
   box-shadow: 0px 4px 8px #888888;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
@@ -29,7 +29,7 @@ const sharedCss = css`
 const Button = styled.button`
   ${sharedCss};
   color: white;
-  background: ${({ disabled }) => (disabled ? grayToWhite : lavenderToBlue)});
+  background: ${({ disabled }) => (disabled ? grayToWhite : lavenderToBlue)};
 `;
 
 export const Primary = ({ children, disabled = false, ...props }) =>
@@ -42,7 +42,7 @@ export const Primary = ({ children, disabled = false, ...props }) =>
 const SecondaryButton = styled.button`
   ${sharedCss};
   color: ${({ disabled }) => (disabled ? "white" : lavender)};
-  background: ${({ disabled }) => (disabled ? grayToWhite : whiteToBlue)});
+  background: ${({ disabled }) => (disabled ? grayToWhite : whiteToBlue)};
 `;
 
 export const Secondary = ({ children, ...props }) => (
@@ -66,7 +66,7 @@ export const Third = ({ children, color, ...props }) => (
 const Danger = styled.button`
   ${sharedCss};
   color: white;
-  background: ${redToWhite});
+  background: ${red};
 `;
 
 export const RedButton = ({ children, ...props }) => (
