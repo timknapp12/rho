@@ -1,11 +1,13 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 import {
   lavender,
   letterSpacing,
-  babyBlue,
-  lightgray,
-  red
+  lavenderToBlue,
+  whiteToBlue,
+  redToWhite,
+  grayToWhite
 } from "../common/style-constants";
 
 const sharedCss = css`
@@ -27,10 +29,7 @@ const sharedCss = css`
 const Button = styled.button`
   ${sharedCss};
   color: white;
-  background: ${({ disabled }) =>
-    disabled
-      ? `linear-gradient(135deg, ${lightgray} 70%, white 100%`
-      : `linear-gradient(135deg, ${lavender} 70%, ${babyBlue} 100%`});
+  background: ${({ disabled }) => (disabled ? grayToWhite : lavenderToBlue)});
 `;
 
 export const Primary = ({ children, disabled = false, ...props }) =>
@@ -43,10 +42,7 @@ export const Primary = ({ children, disabled = false, ...props }) =>
 const SecondaryButton = styled.button`
   ${sharedCss};
   color: ${({ disabled }) => (disabled ? "white" : lavender)};
-  background: ${({ disabled }) =>
-    disabled
-      ? `linear-gradient(135deg, ${lightgray} 70%, white 100%`
-      : `linear-gradient(135deg, white 70%, ${babyBlue} 100%`});
+  background: ${({ disabled }) => (disabled ? grayToWhite : whiteToBlue)});
 `;
 
 export const Secondary = ({ children, ...props }) => (
@@ -70,7 +66,7 @@ export const Third = ({ children, color, ...props }) => (
 const Danger = styled.button`
   ${sharedCss};
   color: white;
-  background: linear-gradient(135deg, ${red} 70%, white 100%);
+  background: ${redToWhite});
 `;
 
 export const RedButton = ({ children, ...props }) => (

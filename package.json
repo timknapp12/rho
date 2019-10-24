@@ -10,10 +10,10 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.22",
     "next": "9.1.1",
     "react": "16.10.2",
-    "react-dom": "16.10.2",
-    "styled-components": "^4.4.0"
+    "react-dom": "16.10.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
