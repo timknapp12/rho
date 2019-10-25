@@ -2,7 +2,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import Nav from "../components/Nav";
 import styled from "@emotion/styled";
-import { WhiteLogo } from "../components/common/icons";
+import { WhiteLogo, WhiteCart } from "../components/common/icons";
+import { lavenderToBlue, seafoam } from "../components/common/style-constants";
 
 const Wrapper = styled.div`
   display: grid;
@@ -17,11 +18,15 @@ const GridItemWrapper = styled.div`
   justify-content: ${({ justify }) => justify};
   grid-column-start: ${({ start }) => start};
   grid-column-end: ${({ end }) => end};
+  &:hover {
+    transform: scale(1.1);
+    animation-duration: 0.5s;
+  }
 `;
 
 storiesOf("Navbar", () => module)
   .add("default", () => (
-    <Nav>
+    <Nav background={seafoam}>
       <p style={{ color: "white" }}>
         Hello there this is a cool baavbar that i made and it is very fin to
         make although my fingers hurt form typing cus Imm not bthat good at it,
@@ -33,16 +38,18 @@ storiesOf("Navbar", () => module)
     </Nav>
   ))
   .add("logos", () => (
-    <Nav>
+    <Nav background={lavenderToBlue}>
       <Wrapper>
         <GridItemWrapper start={1} justify="flex-start">
           <WhiteLogo size="4rem" />
         </GridItemWrapper>
         <GridItemWrapper start={2} end={5} justify="center">
-          <h2>Restore Hope Oils</h2>
+          <h2 style={{ fontSize: "2rem", margin: 0, opacity: 0.7 }}>
+            Restore Hope Oils
+          </h2>
         </GridItemWrapper>
         <GridItemWrapper start={5} justify="flex-end">
-          <p>How are you today?</p>
+          <WhiteCart size="3rem" />
         </GridItemWrapper>
       </Wrapper>
     </Nav>
