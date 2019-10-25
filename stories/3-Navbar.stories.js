@@ -18,9 +18,9 @@ const GridItemWrapper = styled.div`
   justify-content: ${({ justify }) => justify};
   grid-column-start: ${({ start }) => start};
   grid-column-end: ${({ end }) => end};
+  opacity: 0.7;
   &:hover {
-    transform: scale(1.1);
-    animation-duration: 0.5s;
+    opacity: 1;
   }
 `;
 
@@ -44,9 +44,7 @@ storiesOf("Navbar", () => module)
           <WhiteLogo size="4rem" />
         </GridItemWrapper>
         <GridItemWrapper start={2} end={5} justify="center">
-          <h2 style={{ fontSize: "2rem", margin: 0, opacity: 0.7 }}>
-            Restore Hope Oils
-          </h2>
+          <h2 style={{ fontSize: "2rem", margin: 0 }}>Restore Hope Oils</h2>
         </GridItemWrapper>
         <GridItemWrapper start={5} justify="flex-end">
           <WhiteCart size="3rem" />

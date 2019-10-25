@@ -12,8 +12,7 @@ export const WhiteLogo = props => (
     style={{
       width: props.size,
       stroke: props.color,
-      fill: props.color,
-      opacity: 0.7
+      fill: props.color
     }}
   />
 );
@@ -29,10 +28,5 @@ export const BlackCart = props => (
 );
 
 export const WhiteCart = props => (
-  <CartWhite
-    opacity={0.7}
-    width={props.size}
-    fill={props.color}
-    stroke={props.color}
-  />
+  <CartWhite width={props.size} fill={props.color} stroke={props.color} />
 );
