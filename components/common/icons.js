@@ -1,11 +1,18 @@
 import React from "react";
-import logo from "../../public/static/RHO-tree.png";
-import logoSvg from "../../public/static/RHO-tree4.svg";
+import RhoTree from "../icons/RhoTree";
+import RhoTreeWhite from "../icons/RhoTreeWhite";
+import RhoTreeBlack from "../icons/RhoTreeBlack";
 
-export const Logo = () => (
-  <img style={{ color: "red" }} alt="logo" src={logo} />
+export const BlackLogoText = props => <RhoTree fill={props.fill} />;
+
+export const WhiteLogo = props => (
+  <RhoTreeWhite
+    style={{ width: props.size, stroke: props.color, fill: props.color }}
+  />
 );
 
-export const LogoIcon = () => (
-  <img style={{ color: "red" }} alt="logo svg" src={logoSvg} />
+export const BlackLogo = props => (
+  <RhoTreeBlack
+    style={{ width: props.size, stroke: props.color, fill: props.color }}
+  />
 );
