@@ -7,7 +7,9 @@ import {
   lavenderToBlue,
   whiteToBlue,
   red,
-  grayToWhite
+  grayToWhite,
+  boxShadowMedium,
+  boxShadowSmall
 } from "../common/style-constants";
 
 const sharedCss = css`
@@ -18,11 +20,11 @@ const sharedCss = css`
   font-size: 1rem;
   opacity: 0.8;
   letter-spacing: ${letterSpacing};
-  box-shadow: 0px 4px 8px #888888;
+  box-shadow: ${boxShadowMedium};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   &:hover {
     opacity: 1;
-    box-shadow: 0px 2px 4px #888888;
+    box-shadow: ${boxShadowSmall};
   }
 `;
 

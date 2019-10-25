@@ -2,7 +2,12 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import Nav from "../components/Nav";
 import styled from "@emotion/styled";
-import { WhiteLogo, WhiteCart } from "../components/common/icons";
+import {
+  WhiteLogo,
+  WhiteCart,
+  BlackLogo,
+  BlackCart
+} from "../components/common/icons";
 import { lavenderToBlue, seafoam } from "../components/common/style-constants";
 
 const Wrapper = styled.div`
@@ -24,6 +29,18 @@ const GridItemWrapper = styled.div`
   }
 `;
 
+const GridItemWrapperTwo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: ${({ justify }) => justify};
+  grid-column-start: ${({ start }) => start};
+  grid-column-end: ${({ end }) => end};
+  opacity: 1;
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
 storiesOf("Navbar", () => module)
   .add("default", () => (
     <Nav background={seafoam}>
@@ -37,18 +54,41 @@ storiesOf("Navbar", () => module)
       </p>
     </Nav>
   ))
-  .add("logos", () => (
-    <Nav background={lavenderToBlue}>
-      <Wrapper>
-        <GridItemWrapper start={1} justify="flex-start">
-          <WhiteLogo size="4rem" />
-        </GridItemWrapper>
-        <GridItemWrapper start={2} end={5} justify="center">
-          <h2 style={{ fontSize: "2rem", margin: 0 }}>Restore Hope Oils</h2>
-        </GridItemWrapper>
-        <GridItemWrapper start={5} justify="flex-end">
-          <WhiteCart size="3rem" />
-        </GridItemWrapper>
-      </Wrapper>
-    </Nav>
+  .add("lavender to blue", () => (
+    <div style={{ height: "100vh", border: "1px dotted black" }}>
+      <Nav background={lavenderToBlue}>
+        <Wrapper>
+          <GridItemWrapper start={1} justify="flex-start">
+            <WhiteLogo size="4rem" />
+          </GridItemWrapper>
+          <GridItemWrapper start={2} end={5} justify="center">
+            <h2 style={{ fontSize: "2rem", margin: 0 }}>Restore Hope Oils</h2>
+          </GridItemWrapper>
+          <GridItemWrapper start={5} justify="flex-end">
+            <WhiteCart size="3rem" />
+          </GridItemWrapper>
+        </Wrapper>
+      </Nav>
+      <p>Here is some random stuff on the page</p>
+    </div>
+  ))
+  .add("White background", () => (
+    <div style={{ height: "100vh", border: "1px dotted black" }}>
+      <Nav background="white">
+        <Wrapper>
+          <GridItemWrapperTwo start={1} justify="flex-start">
+            <BlackLogo size="4rem" />
+          </GridItemWrapperTwo>
+          <GridItemWrapperTwo start={2} end={5} justify="center">
+            <h2 style={{ fontSize: "2rem", margin: 0, color: "black" }}>
+              Restore Hope Oils
+            </h2>
+          </GridItemWrapperTwo>
+          <GridItemWrapperTwo start={5} justify="flex-end">
+            <BlackCart size="3rem" />
+          </GridItemWrapperTwo>
+        </Wrapper>
+      </Nav>
+      <p>Here is some random stuff on the page</p>
+    </div>
   ));
