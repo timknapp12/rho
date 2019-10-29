@@ -6,7 +6,8 @@ import {
   WhiteLogo,
   WhiteCart,
   BlackLogo,
-  BlackCart
+  BlackCart,
+  BlackCart2
 } from "../components/common/icons";
 import { lavenderToBlue, seafoam } from "../components/common/style-constants";
 
@@ -85,7 +86,7 @@ storiesOf("Navbar", () => module)
             </h2>
           </GridItemWrapperTwo>
           <GridItemWrapperTwo start={5} justify="flex-end">
-            <BlackCart size="3rem" />
+            <BlackCart2 size="3rem" color={seafoam} />
           </GridItemWrapperTwo>
         </Wrapper>
       </Nav>
