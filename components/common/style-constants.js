@@ -18,6 +18,6 @@ export const grayToWhite = `linear-gradient(135deg, ${lightgray} 70%, white 100%
 
 export const letterSpacing = ".125rem";
 
-export const boxShadowMedium = "0px 4px 8px #888888";
+export const boxShadowMedium = "0px 4px 8px #000000";
 
-export const boxShadowSmall = "0px 2px 4px #888888";
+export const boxShadowSmall = "0px 2px 4px #000000";
