@@ -122,20 +122,20 @@ storiesOf("Navbar", () => module)
       <p>Here is some random stuff on the page</p>
     </div>
   ))
-  .add("White background with seafoam", () => (
+  .add("White background with coral", () => (
     <div style={{ height: "100vh", border: "1px dotted black" }}>
       <Nav background="white">
         <Wrapper>
           <GridItemWrapperTwo start={1} justify="flex-start">
-            <Logo size="4rem" color={seafoam} />
+            <Logo size="4rem" color="coral" />
           </GridItemWrapperTwo>
           <GridItemWrapperTwo start={2} end={5} justify="center">
-            <h2 style={{ fontSize: "2rem", margin: 0, color: seafoam }}>
+            <h2 style={{ fontSize: "2rem", margin: 0, color: "coral" }}>
               Restore Hope Oils
             </h2>
           </GridItemWrapperTwo>
           <GridItemWrapperTwo start={5} justify="flex-end">
-            <CartLogo size="3rem" color={seafoam} />
+            <CartLogo size="3rem" color="coral" />
           </GridItemWrapperTwo>
         </Wrapper>
       </Nav>
